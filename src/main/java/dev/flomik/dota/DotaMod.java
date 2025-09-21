@@ -1,6 +1,5 @@
 package dev.flomik.dota;
 
-import dev.flomik.dota.config.DotaConfig;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
