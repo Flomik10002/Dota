@@ -17,6 +17,7 @@ public class OrthoviewClientEvents {
     private static Entity followTarget = null;
     private static double height = 25.0;
     private static double lerp = 0.25;
+    private static double baseY = 0;
 
     public static boolean isEnabled() {
         return enabled;
@@ -24,13 +25,23 @@ public class OrthoviewClientEvents {
 
     public static void enable(Entity target) {
         followTarget = target;
+        baseY = target != null ? target.getY() : 64.0;
         enabled = true;
+        if (MC.player != null) {
+            MC.player.setNoGravity(true);
+            MC.player.setInvisible(true);
+        }
     }
 
     public static void disable() {
         enabled = false;
         followTarget = null;
+        if (MC.player != null) {
+            MC.player.setNoGravity(false);
+            MC.player.setInvisible(false);
+        }
     }
+
 
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent evt) {
@@ -40,7 +51,7 @@ public class OrthoviewClientEvents {
 
         double targetX = target.getX();
         double targetZ = target.getZ();
-        double targetY = target.getY() + height;
+        double targetY = baseY + height;
 
         double camX = MC.player.getX();
         double camY = MC.player.getY();

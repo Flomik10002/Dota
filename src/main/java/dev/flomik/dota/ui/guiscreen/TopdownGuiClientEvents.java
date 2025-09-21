@@ -2,7 +2,6 @@ package dev.flomik.dota.ui.guiscreen;
 
 import dev.flomik.dota.ui.camera.OrthoviewClientEvents;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.screens.PauseScreen;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ScreenEvent;
 import net.minecraftforge.event.TickEvent;
@@ -27,12 +26,7 @@ public class TopdownGuiClientEvents {
             if (MC.screen == null) {
                 noScreenTicks++;
                 if (noScreenTicks >= 3) {
-                    if (shouldPause) {
-                        shouldPause = false;
-                        MC.setScreen(new PauseScreen(true));
-                    } else {
-                        MC.setScreen(new TopdownGui());
-                    }
+                    MC.setScreen(new TopdownGui());
                     noScreenTicks = 0;
                 }
             }
