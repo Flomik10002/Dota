@@ -1,4 +1,4 @@
-package dev.flomik.dota.config;
+package dev.flomik.dota;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
