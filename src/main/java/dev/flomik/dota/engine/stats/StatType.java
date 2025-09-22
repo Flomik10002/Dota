@@ -3,9 +3,13 @@ package dev.flomik.dota.engine.stats;
 import java.util.Locale;
 
 public enum StatType {
-    STR,
-    AGI,
-    INT,
+    BASE_STRENGTH,
+    BASE_AGILITY,
+    BASE_INTELLECT,
+
+    BONUS_STRENGTH,
+    BONUS_AGILITY,
+    BONUS_INTELLECT,
 
     HP,
     MAX_HP,
@@ -25,6 +29,9 @@ public enum StatType {
     EVASION,
     LIFESTEAL,
     SPELL_LIFESTEAL,
+
+    BONUS_ARMOR,
+    BONUS_PHYSICAL_RESIST,
 
     ATTACK_DAMAGE_MIN,
     ATTACK_DAMAGE_MAX,
